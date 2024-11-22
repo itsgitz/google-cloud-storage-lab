@@ -7,9 +7,9 @@ async function main() {
     })
 
     const fileName = 'greetings.txt'
-    const bucket = storage.bucket('finnet-crm-dev')  
+    const bucketName = 'finnet-crm-dev'
 
-    const response = await bucket.file(fileName).download({
+    const response = await storage.bucket(bucketName).file(fileName).download({
       destination: `${__dirname}/downloads/${fileName}`
     })
 

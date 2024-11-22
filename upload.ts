@@ -3,7 +3,6 @@ import { Storage } from "@google-cloud/storage";
 async function main() {
   try {
     const storage = new Storage({
-      //projectId: 'finnet-kubernetes-cluster-dev',
       keyFilename: './auth/finnet-kubernetes-cluster-dev-3291444e7b6b.json'
     })
 
@@ -13,7 +12,10 @@ async function main() {
 
     const upload = await storage.bucket(bucketName).upload(localFilePath, {
       public: true,
-      destination
+      destination,
+      preconditionOpts: {
+        ifGenerationMatch: 0
+      }
     })
 
     console.log(upload)
