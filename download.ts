@@ -7,13 +7,14 @@ async function main() {
     })
 
     const fileName = 'greetings.txt'
+    const objectPath = `uploads/test/${fileName}` 
     const bucketName = 'finnet-crm-dev'
 
-    const response = await storage.bucket(bucketName).file(fileName).download({
+    const response = await storage.bucket(bucketName).file(objectPath).download({
       destination: `${__dirname}/downloads/${fileName}`
     })
 
-    console.log(response)
+    console.log(`downloaded`, response)
   } catch (err) {
     console.log(err.message)
   } 

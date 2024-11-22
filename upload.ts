@@ -11,14 +11,10 @@ async function main() {
     const destination = 'uploads/test/greetings.txt'
 
     const upload = await storage.bucket(bucketName).upload(localFilePath, {
-      public: true,
-      destination,
-      preconditionOpts: {
-        ifGenerationMatch: 0
-      }
+      destination, 
     })
 
-    console.log(upload)
+    console.log(`uploaded: ${upload[0].metadata.mediaLink}`)
   } catch (err) {
     console.log(err.message)
   } 
