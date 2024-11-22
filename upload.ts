@@ -3,6 +3,7 @@ import { Storage } from "@google-cloud/storage";
 async function main() {
   try {
     const storage = new Storage({
+      //projectId: 'finnet-kubernetes-cluster-dev',
       keyFilename: './auth/finnet-kubernetes-cluster-dev-3291444e7b6b.json'
     })
 
