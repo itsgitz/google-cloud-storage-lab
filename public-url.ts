@@ -11,14 +11,9 @@ async function main() {
     const objectPath = `uploads/test/${fileName}` 
     const bucketName = 'finnet-crm-dev'
 
-    const response = await storage.bucket(bucketName).file(objectPath).getSignedUrl({
-      action: 'read',
-      expires: add(new Date(), {
-        weeks: 1
-      })
-    })
+    const response = storage.bucket(bucketName).file(objectPath).publicUrl()
 
-    console.log(`get signed url`, response[0])
+    console.log(`public url`, response)
   } catch (err) {
     console.log(err.message)
   } 

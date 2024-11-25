@@ -9,6 +9,7 @@
   "scripts": {
     "start:download": "npx tsx download.ts",
 	 "start:get-signed-url": "npx tsx get-signed-url.ts",
+	 "start:public-url": "npx tsx public-url.ts",
     "start:upload": "npx tsx upload.ts"
   }
 }
