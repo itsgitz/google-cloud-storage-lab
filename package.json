@@ -1,15 +1,16 @@
 {
   "dependencies": {
     "@google-cloud/storage": "^7.14.0",
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "tsx": "^4.19.2"
   },
   "scripts": {
     "start:download": "npx tsx download.ts",
-	 "start:get-signed-url": "npx tsx get-signed-url.ts",
-	 "start:public-url": "npx tsx public-url.ts",
+    "start:get-signed-url": "npx tsx get-signed-url.ts",
+    "start:public-url": "npx tsx public-url.ts",
     "start:upload": "npx tsx upload.ts"
   }
 }

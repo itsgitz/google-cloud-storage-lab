@@ -1,15 +1,10 @@
-import 'dotenv/config'
 import { Storage } from "@google-cloud/storage";
 import { add } from "date-fns";
 
 async function main() {
   try {
     const storage = new Storage({
-      projectId: process.env.GCS_PROJECT_ID,
-      credentials: {
-        client_email: process.env.GCS_CLIENT_EMAIL,
-        private_key: process.env.GCS_PRIVATE_KEY?.replace(/\\n/g, '\n'), 
-      }
+      keyFilename: './auth/finnet-kubernetes-cluster-dev-3291444e7b6b.json'
     })
 
     const fileName = 'greetings-with-no-key-json.txt'

@@ -1,0 +1,4 @@
+GCS testing .........
+
+Hi, I'm Anggit M Ginanjar!
+I uploaded myself without key.json from gcs!
